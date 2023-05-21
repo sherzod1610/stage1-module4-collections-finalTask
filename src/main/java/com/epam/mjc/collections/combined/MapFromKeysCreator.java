@@ -12,11 +12,10 @@ public class MapFromKeysCreator {
         }
         List<Integer> sortedLength = new ArrayList<>(lengthSet);
         Collections.sort(sortedLength);
+
         for (Integer i : sortedLength) {
-            map.getOrDefault(i, null);
-        }
-        for (String s : keys) {
-            for (Integer i : sortedLength) {
+            map.put(i, new HashSet<>());
+            for (String s : keys) {
                 if (s.length() == i) {
                     map.get(i).add(s);
                 }
